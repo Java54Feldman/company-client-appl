@@ -34,7 +34,7 @@ public class CompanyProxy implements Company {
 	
 	private Employee getRemoveEmployee(String requestType, long id) {
 		String emplJSON = tcpClient.sendAndReceive
-				(new Request("getEmployee", "" + id));
+				(new Request(requestType, "" + id));
 		return (Employee) new Employee().setObject(emplJSON);
 	}
 
